@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Random Number Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!--Make a random number-->
+  <h3 class="header">Random Number Generator</h3>
+  <div class="rng">
+    <input id="value" type="number" placeholder="Enter your Number">
+    <button onclick="myClick()">Generate</button>
+    <p id="result"></p>
+  </div>
+</body>
+</html>
+
+<style type="text/css" media="all">
+  
+
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+h3 {
+  width: 100%;
+  margin: 10px 0%;
+  text-align: center;
+  color: black;
+  position: absolute;
+  top: 50px;
+  font-family: fantasy;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+
+div {
+  border: 2px solid blue;
+  width: 70%;
+  height: 150px;
+  margin: 100px auto;
+  border-radius: 5px;
+  background-color: #EFEFEF0D
+}
+
+input {
+  width: 70%;
+  display: block;
+  margin: 5px auto;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid red;
+}
+
+button {
+  position: relative;
+  background-color: #C80988;
+  outline: none;
+  border: none;
+  color: black;
+  border-radius: 4px;
+  padding: 8px;
+  margin: 10px auto;
+  display: block;
+  text-align: center;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+button:after {
+  content: "";
+  background: #E2E2E2;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -125%;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}
+
+p {
+  background-color: black;
+  color: white;
+  text-align: center;
+  width: 50%;
+  margin: 0px auto;
+  border-radius: 5px;
+}
+  
+</style>
+
+<script type="text/javascript" charset="utf-8">
+
+
+function myClick() {
+  var val = document.getElementById("value").value;
+  
+  if (val === "") {
+    var error = document.getElementById("result").innerHTML = "Enter any number";
+    var styl = document.getElementById("result");
+    styl.style = "color: red; display: block;background: white;width: 100%" ;
+  } else {
+    var rand = val * Math.random();
+    var num = Math.floor(rand);
+    document.getElementById("result").innerHTML = num;
+    var rght = document.getElementById("result");
+    rght.style = "color: white;"
+  }
+}
+  
+</script>
